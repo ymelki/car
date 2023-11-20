@@ -11,17 +11,22 @@ $query = "SELECT * FROM car";
 $statement = $pdo->query($query);
 $cars = $statement->fetchAll(PDO::FETCH_ASSOC);
 // var_dump($cars);
-
+$compteur=1;
 //3 retrieve
 foreach ($cars as $car){
     // get id from column id in cars table
     $id=$car['id'];
     $nameCar=$car['name'];
     ?>
-    <a href="car.php?id=<?=$id?>"><?=$nameCar?></a><br>
+    <?=$compteur?>
+    <a href="car.php?id=<?=$id?>"><?=$nameCar?></a> - 
+    <a href="removecar.php?id=<?=$id?>">Remove</a> - 
+    <a href="editcar.php?id=<?=$id?>">Edit</a>
+    
+    <br>
 
     <?php
-
+$compteur=$compteur+1;
 }
 
 ?>
