@@ -14,7 +14,7 @@ $pdo = new \PDO('mysql:host=localhost;dbname=donkeycar', 'root', '');
 $query = "INSERT INTO car (name,price)
     VALUES (:namecar, :pricecar)";
 $statement = $pdo->prepare($query);
- $statement->bindValue(':namecar', $name, \PDO::PARAM_STR);
+$statement->bindValue(':namecar', $name, \PDO::PARAM_STR);
 $statement->bindValue(':pricecar', $price, \PDO::PARAM_STR);
 
 $statement->execute();
