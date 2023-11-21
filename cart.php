@@ -25,13 +25,17 @@ $cart=$_SESSION['cart'];
     3 => 1
 ]
  */
+$total=0;
 foreach ($cart as $key=>$value){
     
     // 3 query car where id = $_GET (prepare)
 
     $car=getRows($key);
-    echo "<hr>Name :".$car['name']." Price ". $car['price']." - Quantité :".$value;
-
+    $totalPrice=$car['price']*$value;
+    echo "<hr>Name :".$car['name']." Price unitaire ". $car['price']." - Quantité :".$value.  "Total price ".$car['price'] ;
+    $total=$total+$totalPrice;
  
 }
 ?>
+<hr>
+Total price : <?=$total?>
