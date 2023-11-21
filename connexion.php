@@ -23,6 +23,7 @@ $statement->execute();
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 var_dump($user);
 
+// if email user is not in database  
 if ($user===false) {
     header("location:authentification.php");
 }

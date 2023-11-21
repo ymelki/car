@@ -2,8 +2,7 @@
 include "header.php";
 var_dump($_SESSION);
 if (isset($_SESSION['user'])) {
-    echo "test";
-    header("location:index.php");
+     header("location:index.php");
 }
 
 ?>

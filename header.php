@@ -30,8 +30,16 @@ session_start();
         </form>
         <?php
         if (!isset($_SESSION['user'])){
-            echo "Log in ";
+            ?>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="connexion.php" class="nav-link px-2 nav-link text-white link-secondary">Log in</a></li>
+                <li><a href="inscription.php" class="nav-link px-2 text-white link-body-emphasis">Sign in</a></li> 
+            </ul>
+            <?php
         }
+        ?>
+        <?php
+        if (isset($_SESSION['user'])){
         ?>
         <div class="dropdown text-end">
           <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,6 +58,10 @@ session_start();
             <li><a class="dropdown-item" href="logout.php">Sign out</a></li>
           </ul>
         </div>
+        <?php
+        }
+        ?>
+
       </div>
     </div>
   </header>
