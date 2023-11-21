@@ -1,5 +1,11 @@
 <?php
 include "header.php";
+var_dump($_SESSION);
+if (isset($_SESSION['user'])) {
+    echo "test";
+    header("location:index.php");
+}
+
 ?>
 <form action="connexion.php" method="post">
     <div>

@@ -30,7 +30,11 @@ else {
     // if password in form is equal password in database
     // if ($user['password']===$pwd){
     if (password_verify($pwd,$user['password'])) {
-        echo 'Password is valid!';
+        //'Password is valid!';
+        // save email in session variable
+        $_SESSION['user']=$user['email'];
+        // redirect to index.php
+        header("location:index.php");
     }
     else {
         // if password is not valid
