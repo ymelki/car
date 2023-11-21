@@ -21,7 +21,9 @@ foreach ($cars as $car){
     <?=$compteur?>
     <a href="car.php?id=<?=$id?>"><?=$nameCar?></a> - 
     <a href="removecar.php?id=<?=$id?>">Remove</a> - 
-    <a href="editcar.php?id=<?=$id?>">Edit</a>
+    <a href="editcar.php?id=<?=$id?>">Edit</a> - 
+    <a href="addcart.php?id=<?=$id?>">Add to cart</a>
+
     
     <br>
 
