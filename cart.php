@@ -31,8 +31,9 @@ foreach ($cart as $key=>$value){
     // 3 query car where id = $_GET (prepare)
 
     $car=getRows($key);
+    // prix :price * number_place 
     $totalPrice=$car['price']*$value;
-    echo "<hr>Name :".$car['name']." Price unitaire ". $car['price']." - Quantité :".$value.  "Total price ".$car['price'] ;
+    echo "<hr>Name :".$car['name']." Price unitaire ". $car['price']." - Quantité :".$value.  "Total price ".$totalPrice ;
     $total=$total+$totalPrice;
  
 }
