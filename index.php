@@ -12,6 +12,8 @@ $statement = $pdo->query($query);
 $cars = $statement->fetchAll(PDO::FETCH_ASSOC);
 // var_dump($cars);
 $compteur=1;
+var_dump($cars);
+echo "<br>";
 //3 retrieve
 foreach ($cars as $car){
     // get id from column id in cars table

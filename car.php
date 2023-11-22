@@ -25,9 +25,13 @@ Id: <?=$car['id'] ?><br>
 Car : <?=$car['name'] ?><br>
 Price : <?=$car['price'] ?> €<br>
 
+<?php 
+foreach ($car as $key=>$value) { 
+    echo $key. " ". $value."<hr>";
+}
 
 
-<?php
+
 include "footer.php";
 ?>
 

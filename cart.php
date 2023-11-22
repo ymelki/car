@@ -45,11 +45,11 @@ $id=0;
 <tbody>
       
 <?php
-foreach ($cart as $key=>$value){
+foreach ($cart as $id_car=>$quantity){
     $id=$id+1;  
-    $car=getRows($key);
+    $car=getRows($id_car);
     // prix :price * number_place 
-    $totalPrice=$car['price']*$value;
+    $totalPrice=$car['price']*$quantity;
     $total=$total+$totalPrice;
     ?>
     <tr>
@@ -57,9 +57,9 @@ foreach ($cart as $key=>$value){
       <td><?=$car['name']?></td>
       <td><?=$car['price']?></td>
       <td>
-        <a href="removequantitycart.php?id=<?=$car['id']?>&quantity=<?=$value?>"> - </a>
-        <?=$value?>
-        <a href="addquantitycart.php?id=<?=$car['id']?>&quantity=<?=$value?>"> + </a></td>
+        <a href="removequantitycart.php?id=<?=$car['id']?>&quantity=<?=$quantity?>"> - </a>
+        <?=$quantity?>
+        <a href="addquantitycart.php?id=<?=$car['id']?>&quantity=<?=$quantity?>"> + </a></td>
       <td><?=$totalPrice?></td>
     </tr> 
     <?php
@@ -76,6 +76,7 @@ foreach ($cart as $key=>$value){
 Total price : <?=$total?>
 <hr>
 <a href="clearcart.php">clear</a>
+<a href="confirm.php">Valid !</a>
 <?php }
 else {
     echo "cart is empty";
