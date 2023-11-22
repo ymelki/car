@@ -23,6 +23,8 @@ echo "<hr>";
 $user2->sePresenter();
 
 require "Admin.php";
-$admin=new admin("Papa","pepe",23);
+$admin=new admin("Papa","pepe",23,2);
 var_dump($admin);
+
+ 
 ?>
