@@ -20,5 +20,4 @@ class Admin extends User {
         $this->right=$right;
     }
     
-
 }
