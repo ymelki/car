@@ -11,7 +11,10 @@ function getRows($key){
     $row = $statement->fetch(PDO::FETCH_ASSOC);
     return $row;
 }
+if (isset($_SESSION['cart'])){
 var_dump($_SESSION['cart']);
+
+
 $cart=$_SESSION['cart'];
 
 /*
@@ -26,17 +29,55 @@ $cart=$_SESSION['cart'];
 ]
  */
 $total=0;
-foreach ($cart as $key=>$value){
-    
-    // 3 query car where id = $_GET (prepare)
+$id=0;
+?>
 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+<tbody>
+      
+<?php
+foreach ($cart as $key=>$value){
+    $id=$id+1;  
     $car=getRows($key);
     // prix :price * number_place 
     $totalPrice=$car['price']*$value;
-    echo "<hr>Name :".$car['name']." Price unitaire ". $car['price']." - Quantité :".$value.  "Total price ".$totalPrice ;
     $total=$total+$totalPrice;
+    ?>
+    <tr>
+      <td><?=$id?></td>
+      <td><?=$car['name']?></td>
+      <td><?=$car['price']?></td>
+      <td>
+        <a href="removequantitycart.php?id=<?=$car['id']?>&quantity=<?=$value?>"> - </a>
+        <?=$value?>
+        <a href="addquantitycart.php?id=<?=$car['id']?>&quantity=<?=$value?>"> + </a></td>
+      <td><?=$totalPrice?></td>
+    </tr> 
+    <?php
+    
+    // 3 query car where id = $_GET (prepare)
+
+
  
 }
 ?>
-<hr>
+
+</tbody>
+</table> 
 Total price : <?=$total?>
+<hr>
+<a href="clearcart.php">clear</a>
+<?php }
+else {
+    echo "cart is empty";
+}
+?>
