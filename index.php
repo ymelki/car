@@ -5,6 +5,7 @@ $user1=new User();
 $user1->setAge(100);
 var_dump($user1);
 echo $user1->getAge();
+require_once "EmployeeInterface.php";
 
 require_once "Ingenieur.php";
 require_once "Patron.php";
@@ -23,7 +24,6 @@ var_dump($monIngenieur);
 $commercial1=new Commercial("Yoel","Melki",34,2300,500);
 
 var_dump($commercial1);
-
 $patron->augmenteSalaire($commercial1);
 $patron->setPrimeCommercial($commercial1, 5000);
 

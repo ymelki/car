@@ -1,6 +1,6 @@
 <?php
-require_once "EmployeInterface.php";
-class Ingenieur implements EmployeInterface {
+
+ class Ingenieur implements EmployeInterface {
     private string $name;
     private string $lastName;
     // propriété age qui est de type int
