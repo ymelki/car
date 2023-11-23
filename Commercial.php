@@ -1,6 +1,6 @@
 <?php
 
-class Commercial {
+class Commercial implements EmployeInterface {
     
     private string $name;
     private string $lastName;

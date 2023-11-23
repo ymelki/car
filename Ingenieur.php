@@ -1,6 +1,6 @@
 <?php
-
-class Ingenieur {
+require_once "EmployeInterface.php";
+class Ingenieur implements EmployeInterface {
     private string $name;
     private string $lastName;
     // propriété age qui est de type int
@@ -84,10 +84,7 @@ class Ingenieur {
     /**
      * Get the value of salary
      */ 
-    public function getSalary()
-    {
-        return $this->salary;
-    }
+
 
     /**
      * Set the value of salary
@@ -99,5 +96,13 @@ class Ingenieur {
         $this->salary = $salary;
 
         return $this;
+    }
+
+    /**
+     * Get the value of salary
+     */ 
+    public function getSalary()
+    {
+        return $this->salary;
     }
 }

@@ -21,28 +21,18 @@ class Patron {
     // d'augmenter le salaire de l'ingénieur
     // qui augmenter : le patron
     // le salaire de qui : de l'ingenieur 
-    public function augmenteSalaire(Ingenieur $monIngenieur   ){
+    public function augmenteSalaire(EmployeInterface $employee){
         // $monIngenieur->setSalary(3000);
         // recuperation du salaire actuel de l'ingenieur dans une variablr
-        $salary=$monIngenieur->getSalary();
+        $salary=$employee->getSalary();
         // augmentation de 20 du salaire en cours
         $salary=$salary*1.2;
         // enregistrement dans la propriété salaire de 
         // l'ingénieur
-        $monIngenieur->setSalary($salary);
+        $employee->setSalary($salary);
     }
 
-
-    public function augmenteSalaireC(Commercial $monCommercial   ){
-        // $monIngenieur->setSalary(3000);
-        // recuperation du salaire actuel de l'ingenieur dans une variablr
-        $salary=$monCommercial->getSalary();
-        // augmentation de 20 du salaire en cours
-        $salary=$salary*1.2;
-        // enregistrement dans la propriété salaire de 
-        // l'ingénieur
-        $monCommercial->setSalary($salary);
-    }
+ 
  
     public function setPrimeCommercial(Commercial $monCommercial ,
                             int $bonus)

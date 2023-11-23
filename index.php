@@ -24,7 +24,7 @@ $commercial1=new Commercial("Yoel","Melki",34,2300,500);
 
 var_dump($commercial1);
 
-$patron->augmenteSalaireC($commercial1);
+$patron->augmenteSalaire($commercial1);
 $patron->setPrimeCommercial($commercial1, 5000);
 
 var_dump($commercial1);
