@@ -1,11 +1,25 @@
 <?php
 
-class User {
+class Ingenieur {
     private string $name;
     private string $lastName;
     // propriété age qui est de type int
     private int $age;
- 
+    private int $salary;
+
+
+    public function __construct($name, $lastName, $age, $salary)
+    {
+        $this->name=$name;
+        $this->lastName=$lastName;
+        $this->age=$age;
+        $this->salary=$salary;
+    }
+
+    
+
+
+
 
     /**
      * Get the value of name
@@ -63,6 +77,26 @@ class User {
     public function setAge($age)
     {
         $this->age = $age;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of salary
+     */ 
+    public function getSalary()
+    {
+        return $this->salary;
+    }
+
+    /**
+     * Set the value of salary
+     *
+     * @return  self
+     */ 
+    public function setSalary($salary)
+    {
+        $this->salary = $salary;
 
         return $this;
     }
