@@ -1,28 +1,13 @@
 <?php
-require_once "Employee.php";
-class Patron extends Employee {
-   
+
+class Patron {
+    private string $name;
+    private string $lastName;
+    // propriété age qui est de type int
+    private int $age;
     private string $car;
 
-    /**
-     * Set the value of salary
-     *
-     * @return  self
-     */ 
-    public function setSalary($salary)
-    {
-        $this->salary = $salary;
 
-        return $this;
-    }
-
-    /**
-     * Get the value of salary
-     */ 
-    public function getSalary()
-    {
-        return $this->salary;
-    }
     public function __construct($name, $lastName, $age, $car)
     {
         $this->name=$name;
@@ -36,7 +21,7 @@ class Patron extends Employee {
     // d'augmenter le salaire de l'ingénieur
     // qui augmenter : le patron
     // le salaire de qui : de l'ingenieur 
-    public function augmenteSalaire(Employee $employee){
+    public function augmenteSalaire(EmployeInterface $employee){
         // $monIngenieur->setSalary(3000);
         // recuperation du salaire actuel de l'ingenieur dans une variablr
         $salary=$employee->getSalary();
@@ -46,7 +31,7 @@ class Patron extends Employee {
         // l'ingénieur
         $employee->setSalary($salary);
     } 
-    public function setPrime(Primable $primableInterface ,
+    public function setPrime(PrimableInterface $primableInterface ,
                             int $bonus)
     {
         $primableInterface->setPrime($bonus);
