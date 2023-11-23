@@ -5,11 +5,13 @@ $user1=new User();
 $user1->setAge(100);
 var_dump($user1);
 echo $user1->getAge();
-require_once "EmployeeInterface.php";
+require_once "EmployeInterface.php";
+require_once "PrimableInterface.php";
 
 require_once "Ingenieur.php";
 require_once "Patron.php";
 require_once "Commercial.php";
+require_once "Trader.php";
 
 // creer un ingenieur
 $monIngenieur=new Ingenieur("Yoel", "Melki",35,2000);
@@ -32,4 +34,11 @@ var_dump($commercial1);
 require_once "ouvrier.php";
 $ouvrier1=new Ouvrier("Peter","Pan",34,2222);
 $patron->augmenteSalaire($ouvrier1);
+
+
+$trader1=new Trader("Olivier","Tom",52,7000,50000);
+var_dump($trader1);
+$patron->setPrime($trader1,10000);
+var_dump($trader1);
+
 

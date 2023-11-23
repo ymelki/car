@@ -31,19 +31,12 @@ class Patron {
         // l'ingénieur
         $employee->setSalary($salary);
     } 
-    public function setPrime(PrimableInterface $PrimableInterface ,
+    public function setPrime(PrimableInterface $primableInterface ,
                             int $bonus)
     {
-        $PrimableInterface->setPrime($bonus);
+        $primableInterface->setPrime($bonus);
     }
-
-
-    
-
-
-
-
-    /**
+   /**
      * Get the value of name
      */ 
     public function getName()
