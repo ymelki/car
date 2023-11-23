@@ -5,5 +5,5 @@ Interface EmployeInterface {
     public function getSalary();
 
     // il doit avoir une méthode setSalary($salary )
-    public function setSalary(string $salary);
+    public function setSalary(int $salary);
 }
