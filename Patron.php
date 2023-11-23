@@ -30,14 +30,11 @@ class Patron {
         // enregistrement dans la propriété salaire de 
         // l'ingénieur
         $employee->setSalary($salary);
-    }
-
- 
- 
-    public function setPrimeCommercial(Commercial $monCommercial ,
+    } 
+    public function setPrime(PrimableInterface $PrimableInterface ,
                             int $bonus)
     {
-        $monCommercial->setPrime($bonus);
+        $PrimableInterface->setPrime($bonus);
     }
 
 

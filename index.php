@@ -25,6 +25,11 @@ $commercial1=new Commercial("Yoel","Melki",34,2300,500);
 
 var_dump($commercial1);
 $patron->augmenteSalaire($commercial1);
-$patron->setPrimeCommercial($commercial1, 5000);
+$patron->setPrime($commercial1, 5000);
 
 var_dump($commercial1);
+
+require_once "ouvrier.php";
+$ouvrier1=new Ouvrier("Peter","Pan",34,2222);
+$patron->augmenteSalaire($ouvrier1);
+

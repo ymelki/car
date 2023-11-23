@@ -1,7 +1,7 @@
 <?php
 
-class Commercial implements EmployeInterface, PrimableInterface
-{
+class Trader implements PrimableInterface {
+    
     private string $name;
     private string $lastName;
     // propriété age qui est de type int

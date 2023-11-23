@@ -1,23 +1,25 @@
 <?php
 
-class Commercial implements EmployeInterface, PrimableInterface
-{
+class Ouvrier implements EmployeInterface {
     private string $name;
     private string $lastName;
     // propriété age qui est de type int
     private int $age;
     private int $salary;
-    private int $prime;
 
 
-    public function __construct(string $name,string $lastName,int $age,int $salary,int $prime)
+    public function __construct($name, $lastName, $age, $salary)
     {
         $this->name=$name;
-        $this->setLastName($lastName);
-        $this->setAge($age);
-        $this->setSalary($salary);
-        $this->setPrime($prime);
-    }   
+        $this->lastName=$lastName;
+        $this->age=$age;
+        $this->salary=$salary;
+    }
+
+    
+
+
+
 
     /**
      * Get the value of name
@@ -82,10 +84,7 @@ class Commercial implements EmployeInterface, PrimableInterface
     /**
      * Get the value of salary
      */ 
-    public function getSalary()
-    {
-        return $this->salary;
-    }
+
 
     /**
      * Set the value of salary
@@ -99,24 +98,15 @@ class Commercial implements EmployeInterface, PrimableInterface
         return $this;
     }
 
-
     /**
-     * Get the value of prime
+     * Get the value of salary
      */ 
-    public function getPrime()
+    public function getSalary()
     {
-        return $this->prime;
+        return $this->salary;
     }
 
-    /**
-     * Set the value of prime
-     *
-     * @return  self
-     */ 
-    public function setPrime($prime)
-    {
-        $this->prime = $prime;
 
-        return $this;
-    }
+
+
 }
