@@ -27,7 +27,9 @@ class CarRepository
         $statement->bindValue(':myId', $id, \PDO::PARAM_INT);
         // execute
         $statement->execute();
-        // get data 
+        // get data
+        // $statement->setFetchMode(PDO::FETCH_CLASS, 'Car');
+        // $car = $sth->fetch(); 
         $car = $statement->fetch(PDO::FETCH_ASSOC);
         return $car;
     }
