@@ -5,7 +5,7 @@ abstract class Employee {
     private string $lastName;
     // propriété age qui est de type int
     private int $age;
-    private int $salary;
+    protected int $salary;
 
 
     public function __construct($name, $lastName, $age, $salary)
@@ -87,10 +87,14 @@ abstract class Employee {
 
 
 
-    abstract public function getSalary();
+     public function getSalary(){
+        return $this->salary;
+     }
 
     // il doit avoir une méthode setSalary($salary )
-    abstract public function setSalary(int $salary);
+    public function setSalary(int $salary){
+        $this->salary=$salary;
+    }
 
 
 }
