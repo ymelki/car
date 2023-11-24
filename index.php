@@ -1,12 +1,14 @@
 <?php
-require "User.php";
-$user1=new User();
+//require "User.php";
+//$user1=new User();
 // $user1->age=1;
-$user1->setAge(100);
-var_dump($user1);
-echo $user1->getAge();
-require_once "EmployeInterface.php";
-require_once "PrimableInterface.php";
+//$user1->setAge(100);
+//var_dump($user1);
+//echo $user1->getAge();
+//require_once "EmployeInterface.php";
+// require_once "PrimableInterface.php";
+require_once "Employee.php";
+require_once "Primable.php";
 
 require_once "Ingenieur.php";
 require_once "Patron.php";
@@ -42,3 +44,5 @@ $patron->setPrime($trader1,10000);
 var_dump($trader1);
 
 
+$employee1=new Employee("test","te",12,233 );
+var_dump($employee1);
